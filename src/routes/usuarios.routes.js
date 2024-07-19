@@ -1,5 +1,5 @@
 import express from 'express';
-import { getAllUsers, createUser } from '../controllers/usuarios.controller.js';
+import { getAllUsers, createUser, getUserById, updateUserById, deleteUser } from '../controllers/usuarios.controller.js';
 
 const router = express.Router();
 
@@ -8,5 +8,11 @@ router.get('/users', getAllUsers);
 
 // POST /api/users -> Guardar un usuario
 router.post('/users', createUser);
+
+router.get('/users/:id', getUserById); 
+
+router.put('/users/:id', updateUserById)
+
+router.delete('/users/:id', deleteUser)
 
 export default router;
